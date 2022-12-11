@@ -71,6 +71,7 @@
     <Content Include="HomeAdmin.aspx" />
     <Content Include="HomeRegular.aspx" />
     <Content Include="Imagenes\Keysher0.jpg" />
+    <Content Include="Imagenes\MejorVersionPropia.png" />
     <Content Include="Imagenes\VariosUsuarios.png" />
     <Content Include="InicioAdmin.aspx" />
     <Content Include="InicioRegular.aspx" />

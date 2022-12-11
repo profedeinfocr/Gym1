@@ -90,7 +90,17 @@ namespace Gym1
 
         protected void Bactualizar_Click(object sender, EventArgs e)
         {
-            
+            String s = System.Configuration.ConfigurationManager.ConnectionStrings["Gym1ConnectionString"].ConnectionString;
+            SqlConnection conexion = new SqlConnection(s);
+            conexion.Open();
+            SqlCommand comando = new SqlCommand(" UPDATE Client_Master SET nombre = '" + Tnombre.Text + "', apellidos = '" + Tapellidos.Text + "', telefono = '" + Ttelefono.Text + "', fecha_nacimiento = '" + TfechaN.Text + "'  WHERE email = '"+Temail.Text+"'", conexion);
+            SqlCommand comando2 = new SqlCommand(" UPDATE User_Master set clave = '" + Tclave.Text + "', tipo = '" + Ttipo.Text + "' WHERE email = '"+Temail.Text+ "' ", conexion);
+            SqlCommand comando3 = new SqlCommand(" UPDATE Direccion set provincia = '" + DDLprovincia.Text + "', canton =  '" + DDLcanton.Text + "', distrito = '" + DDLdistrito.Text + "' , detalles = '" + Tdetalle.Text + "' WHERE email = '" + Temail.Text + "'", conexion);
+            comando.ExecuteNonQuery();
+            comando2.ExecuteNonQuery();
+            comando3.ExecuteNonQuery();
+            conexion.Close();
+            LlenarGrid();
 
         }
 
