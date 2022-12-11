@@ -69,10 +69,13 @@
   <ItemGroup>
     <Content Include="CSS\Estilo.css" />
     <Content Include="HomeAdmin.aspx" />
+    <Content Include="HomeRegular.aspx" />
     <Content Include="Imagenes\Keysher0.jpg" />
+    <Content Include="Imagenes\VariosUsuarios.png" />
     <Content Include="InicioAdmin.aspx" />
     <Content Include="InicioRegular.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="SQL\SQLQueryGym1.sql" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +87,13 @@
     </Compile>
     <Compile Include="HomeAdmin.aspx.designer.cs">
       <DependentUpon>HomeAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomeRegular.aspx.cs">
+      <DependentUpon>HomeRegular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomeRegular.aspx.designer.cs">
+      <DependentUpon>HomeRegular.aspx</DependentUpon>
     </Compile>
     <Compile Include="InicioAdmin.aspx.cs">
       <DependentUpon>InicioAdmin.aspx</DependentUpon>
@@ -125,6 +135,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -33,7 +33,7 @@ namespace Gym1
 
                 else {
 
-                    Response.Redirect("InicioRegular.aspx");
+                    Response.Redirect("HomeRegular.aspx");
 
                 }
             }

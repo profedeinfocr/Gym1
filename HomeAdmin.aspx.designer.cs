@@ -69,6 +69,15 @@ namespace Gym1
         protected global::System.Web.UI.WebControls.TextBox Tclave;
 
         /// <summary>
+        /// Control Ttipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Ttipo;
+
+        /// <summary>
         /// Control DDLprovincia.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,33 @@ namespace Gym1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Bagregar;
+
+        /// <summary>
+        /// Control Bborrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Bborrar;
+
+        /// <summary>
+        /// Control Bconsultar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Bconsultar;
+
+        /// <summary>
+        /// Control Bactualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Bactualizar;
 
         /// <summary>
         /// Control GridView1.

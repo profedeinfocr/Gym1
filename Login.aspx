@@ -5,42 +5,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link href="CSS/Estilo.css" rel="stylesheet" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
     <title></title>
     <style type="text/css">
-        .auto-style1 {
-            height: 58px;
-        }
-        .auto-style2 {
-            width: 216px;
-            height: 270px;
-        }
         .auto-style3 {
             text-align: center;
         }
+        .auto-style5 {
+            color: #0000FF;
+            font-size: x-large;
+        }
+        
+        .auto-style7 {
+            color: #000099;
+            font-size: large;
+        }
+        .auto-style8 {
+            color: #000099;
+            font-size: large;
+            width: 535px;
+            height: 578px;
+        }
+        
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="auto-style3">
             <br />
-            <img alt="" class="auto-style2" src="Imagenes/Keysher0.jpg" /><br />
-            KEYSHER&#39;S GYM<br />
+            <span class="auto-style5"><strong>KEYSHER&#39;S GYM</strong></span><br />
             <br />
             <br />
-            
-            <ul class="auto-style1">
-
-  <li><a href="Inicio.aspx">Inicio</a></li>
-  <li><a href="Usuarios.aspx">Heredia</a></li>
-  <li><a href="Administrador.aspx">Nació</a></li>
-  <li><a href="Facturacion.aspx">Grande!</a></li>
-  <li style="float:right"><a class="active" href="#about">About</a></li>
-</ul>
-
-
-            <br />
-            <br />
+            <span class="auto-style7"><strong>INGRESE USUARIO Y CONTRASEÑA VALIDOS</strong></span><br />
             <br />
 
 
@@ -59,6 +55,7 @@
             <asp:Label ID="lmensaje" runat="server" Text="*"></asp:Label>
             <br />
             <br />
+            <img alt="" class="auto-style8" src="Imagenes/Keysher0.jpg" /><br />
             <br />
             <br />
         </div>
