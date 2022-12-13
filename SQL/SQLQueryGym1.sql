@@ -1,7 +1,7 @@
 --crear base de datos
 create database Gym1
 
-drop table Client_Master
+drop table User_Master
 
 create table Client_Master(
 email varchar (30) unique, --consecutivo usuario
@@ -72,9 +72,10 @@ create procedure borrarUsuarios
 		as
 		begin
 			delete User_Master where email = @email
+			
 		end
 
-		exec borrarUsuarios 'Beli@uh.cr'
+		exec borrarUsuarios 'Dislexia0@uh.cr'
 
 
 create procedure ingresarUsuarios --para modificar se cambia create por alter
@@ -106,12 +107,18 @@ create procedure ingresarUsuarios --con clave automatica
 
 
 create procedure actualizarUsuarios 
-	@cod_UC int,
 	@email varchar (30),
+	@nombre varchar(50),
+	@apellidos varchar(50),
+	@telefono varchar(50),
+	@fecha_nacimiento datetime,
 	@clave varchar (30),
-	@tipo varchar (30) = 'Regular'
+	@tipo varchar (30)
 	 as
 	  begin
+	   update Client_Master (nombre, apellidos, telefono) set @email, 
+	   update User_Master (cod_UC, email, clave, tipo) values (@cod_UC, @email, @clave, @tipo)
+	  e
 	   update User_Master (cod_UC, email, clave, tipo) values (@cod_UC, @email, @clave, @tipo)
 	  end
 
@@ -136,13 +143,31 @@ create procedure validarUsuario
 			end
 execute validarUsuario 'Ana@uh.cr', '1111'
 
-create procedure mostrarCantones0
+alter procedure mostrarCantones0
 	@provincia varchar (30)
 		as
 			begin
 				select canton from Cantones where provincia = @provincia
 			end
-execute mostrarCantones0 'Alajuela'
+execute mostrarCantones0 'Heredia'
+
+
+create procedure mostrarDistritos0
+	@canton varchar (30)
+		as
+			begin
+				select distrito from Distritos where canton = @canton
+			end
+execute mostrarDistritos0 'Cartago'
+
+create procedure mostrarDistritos1
+	@canton varchar (30)
+		as
+			begin
+				select cod_distrito from Distritos where canton = @canton
+			end
+execute mostrarDistritos1 'Cartago'
+
 
 select canton from Cantones where provincia = 'Heredia'
 
@@ -762,8 +787,7 @@ values ('San Jose',10101,'Carmen'),
 
 SELECT cm.email, cm.nombre, cm.apellidos, cm.telefono, um.clave from Client_Master cm inner join User_Master um on um.email = cm.email WHERE um.email = 'gaitan@uh.cr'
 
-SELECT cm.email, cm.nombre, cm.apellidos, cm.telefono, um.clave, d.provincia, d.canton, d.distrito, d.detalles from Client_Master cm inner join User_Master um on um.email = cm.email inner join Direccion d on d.email = cm.email 
-where cm.email = 'gaitan@uh.cr'
+SELECT cm.email, cm.nombre, cm.apellidos, cm.fecha_nacimiento, cm.telefono, um.clave, d.provincia, d.canton, d.distrito, d.detalles from Client_Master cm inner join User_Master um on um.email = cm.email inner join Direccion d on d.email = cm.email where cm.email = 'gaitan@uh.cr'
 
 
 INSERT INTO Facturacion (email) VALUES ('Beli@UH.cr')
