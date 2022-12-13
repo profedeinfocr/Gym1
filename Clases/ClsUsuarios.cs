@@ -16,6 +16,10 @@ namespace Gym1.Clases
 
         public static string tipo { get; set; }
 
+        
+
+
+
         public static int ValidarLogin(string email, string clave)
         {
             int retorno = 0;

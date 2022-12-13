@@ -23,6 +23,15 @@ namespace Gym1
 
         }
 
+        public static SqlConnection obtenerConexion()
+        {
+            string s = System.Configuration.ConfigurationManager.ConnectionStrings["Gym1ConnectionString"].ConnectionString;
+            SqlConnection conexion = new SqlConnection(s);
+            conexion.Open();
+            return conexion;
+        }
+
+
         protected void LlenarGrid()
         {
             string constr = ConfigurationManager.ConnectionStrings["Gym1ConnectionString"].ConnectionString;
@@ -51,7 +60,7 @@ namespace Gym1
             SqlConnection conexion = new SqlConnection(s);
             conexion.Open();
             SqlCommand comando = new SqlCommand(" INSERT INTO Client_Master(email, nombre, apellidos, telefono, fecha_nacimiento) VALUES('" + Temail.Text + "', '" + Tnombre.Text + "', '" + Tapellidos.Text + "', '" + Ttelefono.Text + "', '" + TfechaN.Text + "')", conexion);
-            SqlCommand comando2 = new SqlCommand(" INSERT INTO User_Master(email, clave, tipo) VALUES('" + Temail.Text + "', '" + Tclave.Text + "', '" + Ttipo.Text + "')", conexion);
+            SqlCommand comando2 = new SqlCommand(" INSERT INTO User_Master(email, clave, tipo) VALUES('" + Temail.Text + "', '" + Tclave.Text + "', '" + DDLtipo.Text + "')", conexion);
             SqlCommand comando3 = new SqlCommand(" INSERT INTO Direccion(email, provincia, canton, distrito, detalles) VALUES('" + Temail.Text + "', '" + DDLprovincia.Text + "', '" + DDLcanton.Text + "', '" + DDLdistrito.Text + "' , '" + Tdetalle.Text + "')", conexion);
             comando.ExecuteNonQuery();
             comando2.ExecuteNonQuery();
@@ -82,8 +91,6 @@ namespace Gym1
             conexion.Open();
             SqlCommand comando = new SqlCommand("DELETE User_Master where email = '" + Temail.Text + "'", conexion);
             comando.ExecuteNonQuery();
-            //SqlCommand comando1 = new SqlCommand("DELETE Cliente_Master where email = '" + Temail.Text + "'", conexion);
-            //comando1.ExecuteNonQuery();
             conexion.Close();
             LlenarGrid();
         }
@@ -94,7 +101,7 @@ namespace Gym1
             SqlConnection conexion = new SqlConnection(s);
             conexion.Open();
             SqlCommand comando = new SqlCommand(" UPDATE Client_Master SET nombre = '" + Tnombre.Text + "', apellidos = '" + Tapellidos.Text + "', telefono = '" + Ttelefono.Text + "', fecha_nacimiento = '" + TfechaN.Text + "'  WHERE email = '"+Temail.Text+"'", conexion);
-            SqlCommand comando2 = new SqlCommand(" UPDATE User_Master set clave = '" + Tclave.Text + "', tipo = '" + Ttipo.Text + "' WHERE email = '"+Temail.Text+ "' ", conexion);
+            SqlCommand comando2 = new SqlCommand(" UPDATE User_Master set clave = '" + Tclave.Text + "', tipo = '" + DDLtipo.Text + "' WHERE email = '"+Temail.Text+ "' ", conexion);
             SqlCommand comando3 = new SqlCommand(" UPDATE Direccion set provincia = '" + DDLprovincia.Text + "', canton =  '" + DDLcanton.Text + "', distrito = '" + DDLdistrito.Text + "' , detalles = '" + Tdetalle.Text + "' WHERE email = '" + Temail.Text + "'", conexion);
             comando.ExecuteNonQuery();
             comando2.ExecuteNonQuery();
@@ -119,7 +126,7 @@ namespace Gym1
             TfechaN.Text = registro["fecha_nacimiento"].ToString();
             Ttelefono.Text = registro["telefono"].ToString();
             Tclave.Text = registro["clave"].ToString();
-            Ttipo.Text = registro["tipo"].ToString();
+            DDLtipo.Text = registro["tipo"].ToString();
             DDLprovincia.Text = registro["provincia"].ToString();
             DDLcanton.Text = registro["canton"].ToString();
             DDLdistrito.Text = registro["distrito"].ToString();
@@ -127,5 +134,26 @@ namespace Gym1
 
 
         }
+
+        
+        protected void Bfumigar_Click(object sender, EventArgs e)
+        {
+            
+            SqlConnection Conn = new SqlConnection();
+
+            
+                using (Conn = DboConnection.obtenerConexion())
+                {
+                    SqlCommand cmd = new SqlCommand("borrarUsuarios", Conn)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+                    cmd.Parameters.Add(new SqlParameter("email", Temail.Text));
+                    cmd.ExecuteNonQuery();
+                    LlenarGrid();
+
+                string jscript = "<script>alert('YOUR BUTTON HAS BEEN CLICKED')</script>";
+                }
+            }
     }
 }

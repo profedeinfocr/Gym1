@@ -69,13 +69,13 @@ namespace Gym1
         protected global::System.Web.UI.WebControls.TextBox Tclave;
 
         /// <summary>
-        /// Control Ttipo.
+        /// Control DDLtipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Ttipo;
+        protected global::System.Web.UI.WebControls.DropDownList DDLtipo;
 
         /// <summary>
         /// Control DDLprovincia.
@@ -150,15 +150,6 @@ namespace Gym1
         protected global::System.Web.UI.WebControls.Button Bagregar;
 
         /// <summary>
-        /// Control Bborrar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Bborrar;
-
-        /// <summary>
         /// Control Bconsultar.
         /// </summary>
         /// <remarks>
@@ -166,6 +157,15 @@ namespace Gym1
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Bconsultar;
+
+        /// <summary>
+        /// Control Beliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Beliminar;
 
         /// <summary>
         /// Control Bactualizar.

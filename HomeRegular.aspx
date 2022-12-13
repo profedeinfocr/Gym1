@@ -76,7 +76,7 @@
         &nbsp;&nbsp;&nbsp; Detalle&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:TextBox ID="Tdetalle" runat="server"></asp:TextBox>
     </p>
     <p class="auto-style4">
-        <asp:Button ID="Bactualizar" runat="server" Text="Actualizar Datos" />
+        <asp:Button ID="Bactualizar" runat="server" Text="Actualizar Datos" OnClick="Bactualizar_Click" />
     </p>
     <p class="auto-style4">
         &nbsp;</p>

@@ -60,8 +60,12 @@
 &nbsp;&nbsp;
     </p>
     <p class="auto-style4">
-        &nbsp;&nbsp; Tipo de Usuario&nbsp;
-        <asp:TextBox ID="Ttipo" runat="server"></asp:TextBox>
+        &nbsp;&nbsp; Tipo de Usuario&nbsp;&nbsp;
+        <asp:DropDownList ID="DDLtipo" runat="server">
+            <asp:ListItem>Regular</asp:ListItem>
+            <asp:ListItem>Admin</asp:ListItem>
+        </asp:DropDownList>
+&nbsp;&nbsp;&nbsp;
     </p>
     <p class="auto-style4">
         &nbsp;&nbsp;
@@ -98,9 +102,9 @@
     <p class="auto-style4">
         <asp:Button ID="Bagregar" runat="server" OnClick="Bagregar_Click" Text="Agregar" />
     &nbsp;&nbsp;
-        <asp:Button ID="Bborrar" runat="server" OnClick="Bborrar_Click" Text="Borrar" />
-&nbsp;&nbsp;
+        &nbsp;&nbsp;
         <asp:Button ID="Bconsultar" runat="server" OnClick="Bconsultar_Click" Text="Consultar" />
+&nbsp;&nbsp;<asp:Button ID="Beliminar" runat="server" OnClick="Bfumigar_Click" Text="Eliminar" />
 &nbsp;&nbsp;
     </p>
     <p class="auto-style4">

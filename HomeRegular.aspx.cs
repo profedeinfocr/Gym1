@@ -49,5 +49,24 @@ namespace Gym1
         {
 
         }
+
+        protected void Bactualizar_Click(object sender, EventArgs e)
+        {
+            SqlConnection Conn = new SqlConnection();
+
+
+            using (Conn = DboConnection.obtenerConexion())
+            {
+                SqlCommand cmd = new SqlCommand("borrarUsuarios", Conn)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Parameters.Add(new SqlParameter("email", Temail.Text));
+                cmd.ExecuteNonQuery();
+                
+
+                string jscript = "<script>alert('YOUR BUTTON HAS BEEN CLICKED')</script>";
+            }
+        }
     }
 }
